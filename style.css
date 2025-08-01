@@ -1,0 +1,401 @@
+/* homepage styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #E9F6FC; /* Soft Pastel Blue */
+    --text-color: #2C3E50; /* Dark Gray */
+    --second-color: #A3B18A; /* Minty Green */
+    --main-color: #B0C4DE; /* Light Steel Blue */
+    --highlight-color: #FFDAC1; /* Soft Peach */
+    --big-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+    --white: #fff;  /* Added white color */
+    --light-white: #ddd;  /* Added light white color */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  cursor: default;
+}
+
+h2 {
+  margin-top: 90px;
+}
+
+/* Header Section */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 30px 18%;
+  height: 70px; 
+  transition: ease .40s;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-color);
+}
+
+/* Navbar Section */
+.navbar {
+  position: sticky; /* Make navbar sticky */
+  top: 0; /* Stick it to the top */
+  background: transparent; /* Initially transparent */
+  z-index: 1000; /* Ensure it's above other content */
+  display: flex;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+/* Navbar on scroll */
+.header.scrolled {
+  background-color: var(--main-color); /* Background color after scrolling */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+}
+
+.navbar a {
+  color: var(--text-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 4px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Home Section */
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(233, 246, 252, 0) 80%, rgba(233, 246, 252, 0.5) 100%), url('assets/hpbg.png') no-repeat center center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  padding-left: 10%; /* Adjust this for left padding */
+}
+
+.home h1 {
+  color: var(--main-color);
+  font-size: 6rem;
+  text-align: left; /* Align text to the left */
+  z-index: 10;
+  margin-left: 0; /* Ensure no margin is added to the left */
+  line-height: 1.2;
+}
+
+.home p {
+  font-size: 1.8rem;
+}
+
+.home-btn {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px 40px;
+  margin-top: 40px;
+  background-color: var(--second-color);
+  color: #ffffff;
+  border-radius: 4px;
+  transition: ease .40s; 
+}
+
+.home-btn:hover {
+  background-color: #828d6f;
+  transition: ease .40s;
+}
+
+/* About Section */
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  margin-top: 5rem;
+  gap: 100px;
+}
+
+.text-wrapper {
+  flex: 1;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.text-wrapper h1 {
+  font-size: 3.3rem;
+  margin-left: 50px;
+}
+
+.wrapper p {
+  flex: 1;
+  margin-right: 100px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.wrapper img {
+  width: 500px;
+  height: auto;
+  margin-right: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; 
+}
+
+.wrapper img:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between; /* Space between the boxes */
+  gap: 20px; /* Space between the boxes */
+  margin: 0 10%;
+}
+
+/* Features Section */
+.features h2 {
+  font-size: var(--h2-font);
+} 
+
+.overview-container {
+  display: flex;
+  justify-content: center; 
+  gap: 20px; 
+  padding: 30px;
+  flex-wrap: nowrap; /* boxes not wrap to new lines */
+  flex: 0 1 300px; /* box at least 300px */
+  margin: 10px; 
+}
+
+.overview-box {
+  background-color: #CDEDE6; 
+  border: 1px solid #afcfc8; 
+  border-radius: 8px; 
+  padding: 20px;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease; 
+}
+
+.overview-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Plushies Section */
+.plushies h2 {
+  font-size: var(--h2-font);
+} 
+
+.overview-container-p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plushRow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.row-3 {
+  justify-content: center;
+}
+
+.overview-box-p img {
+  width: 100%;  /* Makes the image stretch to the full width of its container */
+  height: 200px;  /* Fixed height */
+  object-fit: cover;  /* Ensures the image covers the area without distorting */
+  display: block;
+  margin: 20px auto;
+}
+
+.overview-box-p {
+  background-color: #CDEDE6;
+  border: 1px solid #afcfc8;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.overview-box-p:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box1 h4 {
+ color: #6b7580;
+}
+
+.box2 h4 {
+  color: #6fb155;
+}
+
+.box3 h4 {
+  color: #6fb155;
+}
+
+.box4 h4 {
+  color: #557ab1;
+}
+
+.box5 h4 {
+  color: #7e55b1;
+}
+
+.box6 h4 {
+  color: #7e55b1;
+}
+
+.box7 h4 {
+  color: #b4b707;
+}
+
+/* Footer Section */
+.footer {
+  padding-top: 30px;
+  background-color: var(--main-color);
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.col h4 {
+  position: relative;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.col h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #515151;
+  height: 2px;
+  width: 50px;
+}
+
+.col ul {
+  list-style: none;
+}
+
+.col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #424242;
+  text-decoration: none;
+  font-weight: 300;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.col ul li a:hover {
+  padding-left: 10px;
+}
+
+.col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: var(--bg-color);
+  margin-right: 10px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #424242;
+  transition: all 0.5s ease;
+}
+
+.credit {
+  text-align: center;
+  padding: 50px 0 30px 0;
+  font-size: 1.2rem;
+}
+
+.col .social-links a:hover {
+  color: var(--bg-color);
+  background-color: #424242;
+}
+
+/* Footer Section End */
+
+/* Responsive Styles */
+@media(max-width: 767px) {
+  .col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 574px) {
+  .col {
+    width: 100%;
+  }
+}

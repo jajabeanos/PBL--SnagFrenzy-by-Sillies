@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+/* Center the form */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #cabcee, #ffc1dc);
+    margin: 0;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding: 20px;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.btn {
+    background-color: #e6d8ff;
+    color: #5a3b8c;
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #5a3b8c;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #5a3b8c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn.active {
+    background-color: #5a3b8c;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Toggle */
+.icon {
+    width: 34px;
+    background-color: #c8eab1;
+    height: 34px;
+    border-radius: 50%;
+    top: 3px;
+    position: absolute;
+    left: 3px;
+    animation: light-dark 4s;
+}
+
+.input:checked+.label {
+    background-color: white;
+}
+
+.input:checked+.label .circle {
+    animation: toggleOn 0.4s linear forwards;
+    background-color: black;
+}
+
+/* Icon animation */
+@keyframes light-dark {
+    0% {
+        background-color: #fdfda4;
+    }
+
+    25% {
+        background-color: #b2b28e;
+    }
+
+    50% {
+        background-color: #3e387a;
+    }
+
+    100% {
+        background-color: #08023b;
+    }
+}
+
+/* Form container */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #ff9ed8, #b388ff);
+}
+
+.contact-form h2 {
+    color: #5a3b8c;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.form-subtitle {
+    color: #888;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Input box styling */
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.required label:after {
+    content: " *";
+    color: #ff6b6b;
+}
+
+.input-helper {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Label styling */
+.input-box label {
+    display: block;
+    font-size: 12px;
+    color: #5a3b8c;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input and textarea styling */
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #c8c8c8;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 16px;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Underline effect */
+.input-box input:focus,
+.input-box textarea:focus {
+    border-bottom: 2px solid #b388ff;
+}
+
+/* Rarity selection */
+.rarity-selection {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.rarity-selection label {
+    display: block;
+    font-size: 12px;
+    color: #5a3b8c;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rarity-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.rarity-option {
+    position: relative;
+}
+
+.rarity-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rarity-label {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.rarity-label.common {
+    background-color: #e0e0e0;
+    border-color: #9e9e9e;
+}
+
+.rarity-label.uncommon {
+    background-color: #c8e6c9;
+    border-color: #4caf50;
+}
+
+.rarity-label.rare {
+    background-color: #bbdefb;
+    border-color: #2196f3;
+}
+
+.rarity-label.ultraRare {
+    background-color: #e1bee7;
+    border-color: #9c27b0;
+}
+
+.rarity-label.legendary {
+    background: linear-gradient(135deg, #fff9c4, #ffd54f);
+    border-color: #ffc107;
+}
+
+.rarity-option input[type="radio"]:checked+.rarity-label {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rarity-option input[type="radio"]:focus+.rarity-label {
+    box-shadow: 0 0 0 3px rgba(179, 136, 255, 0.3);
+}
+
+/* Preview section */
+.preview-section {
+    background-color: #f9f4ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.preview-section h3 {
+    color: #5a3b8c;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+}
+
+.preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.plush-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plush-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.preview-placeholder {
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+}
+
+.preview-details {
+    text-align: center;
+}
+
+.preview-details p {
+    margin: 5px 0;
+}
+
+/* Submit button */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+#submit,
+.secondary-button {
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+#submit {
+    background: linear-gradient(to right, #b388ff, #8c9eff);
+    color: white;
+    flex: 2;
+}
+
+.secondary-button {
+    background: #e6e6e6;
+    color: #5a3b8c;
+    flex: 1;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.success-message {
+    text-align: center;
+}
+
+.success-message h2 {
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.success-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.success-button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Pixelify Sans', sans-serif;
+    display: inline-block;
+}
+
+.success-button {
+    background: linear-gradient(to right, #b388ff, #8c9eff);
+    color: white;
+}
+
+.success-button.secondary {
+    background: #e6e6e6;
+    color: #5a3b8c;
+    border: none;
+}
+
+.success-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+/* Star Rating */
+.starRating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.star {
+    font-size: 2.5rem;
+    color: #ffde59;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+    background: none;
+    border: none;
+}
+
+.star:hover {
+    transform: scale(1.2);
+    color: #ffff7d;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .rarity-options {
+        justify-content: center;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    #submit,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .success-buttons {
+        flex-direction: column;
+    }
+
+    .success-button {
+        width: 100%;
+    }
+}

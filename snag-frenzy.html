@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Snag Frenzy! ✨</title>
+    <link rel="stylesheet" href="snag-frenzy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- nav -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">Snag Frenzy!</span>
+        </div>
+        <div class="nav-links">
+            <a href="homepage.html" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+            <a href="snag-frenzy.html" class="nav-btn active"><i class="fas fa-gamepad"></i> Play Now</a>
+            <a href="form.html" class="nav-btn"><i class="fas fa-comment"></i> Make a Plush</a>
+        </div>
+    </nav>
+
+    <!-- Container -->
+    <div class="main-container">
+        <!--game desc -->
+        <div class="game-panel description-panel">
+            <div class="panel-content">
+                <h2 class="panel-title"><i class="fas fa-info-circle"></i> Game Info</h2>
+
+                <div class="controls-guide">
+                    <p><i class="fas fa-keyboard"></i> <strong>Controls:</strong> Use Left/Right arrows to move,
+                        Spacebar to grab!</p>
+                    <p><i class="fas fa-clock"></i> You have <span id="timer-display">10</span> seconds to grab
+                        something!</p>
+                </div>
+
+                <h3 class="collectibles-title"><i class="fas fa-star"></i> Collectibles Gallery</h3>
+                <div class="collectibles-list">
+                    <div class="collectibles common" data-rarity="common">Rock</div>
+                    <div class="collectibles uncommon" data-rarity="uncommon">Cat</div>
+                    <div class="collectibles uncommon" data-rarity="uncommon">Dog</div>
+                    <div class="collectibles rare" data-rarity="rare">Mouse</div>
+                    <div class="collectibles ultraRare" data-rarity="ultraRare">Rabbit</div>
+                    <div class="collectibles ultraRare" data-rarity="ultraRare">Frog</div>
+                    <div class="collectibles legendary" data-rarity="legendary">👽</div>
+                </div>
+
+                <div class="inventory-section">
+                    <h3 class="inventory-title"><i class="fas fa-box-open"></i> Your Collection</h3>
+                    <div class="inventory" id="inventory">
+                        <!-- collected items -->
+                        <p>Your collection is empty. Win some prizes!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- game panel -->
+        <div class="game-panel play-panel">
+            <div class="panel-content">
+                <h1 class="game-title">✨ Snag Frenzy! ✨</h1>
+
+                <div id="coins-display">Coins: 5</div>
+
+                <div id="machine">
+                    <div class="timer-bar">
+                        <div class="timer-progress"></div>
+                    </div>
+                    <div id="claw">
+                        <div class="claw-part claw-left"></div>
+                        <div class="claw-part claw-center"></div>
+                        <div class="claw-part claw-right"></div>
+                    </div>
+                    <div id="container"></div>
+                    <div id="coin-slot">
+                        <div id="coin-slot-inner">Insert Coin</div>
+                    </div>
+                </div>
+
+                <div id="result">Insert a coin to start.</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="snag-frenzy.js"></script>
+</body>
+
+</html>

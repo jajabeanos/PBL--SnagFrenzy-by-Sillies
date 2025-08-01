@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snag Frenzy - Submit Your Plush Idea!</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div class="button-container">
+        <a href="index.html" class="btn">🏠 Homepage</a>
+        <a href="snag-frenzy.html" class="btn">🎮 Play Now</a>
+        <a href="form.html" class="btn active">💌 Submit Your Plush</a>
+    </div>
+
+    <div class="container">
+        <form class="contact-form" id="plushForm">
+            <h2>Submit Your Plush Idea!</h2>
+            <p class="form-subtitle">Got a great idea for a new plush toy? Let us know!</p>
+
+            <div class="input-box">
+                <label for="name">YOUR NAME</label>
+                <input type="text" id="name" name="name" placeholder="Your name (optional)">
+                <span class="underline"></span>
+                <p class="input-helper">Your name will be shown as the creator of this plush!</p>
+            </div>
+
+            <div class="input-box">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="Your email (optional)">
+                <span class="underline"></span>
+            </div>
+
+            <div class="input-box required">
+                <label for="plushName">PLUSH NAME *</label>
+                <input type="text" id="plushName" name="plushName" required placeholder="Give your plush a name!">
+                <span class="underline"></span>
+            </div>
+
+            <div class="rarity-selection required">
+                <label for="plushRarity">PLUSH RARITY *</label>
+                <div class="rarity-options">
+                    <div class="rarity-option">
+                        <input type="radio" id="common" name="plushRarity" value="common" required>
+                        <label for="common" class="rarity-label common">Common</label>
+                    </div>
+                    <div class="rarity-option">
+                        <input type="radio" id="uncommon" name="plushRarity" value="uncommon">
+                        <label for="uncommon" class="rarity-label uncommon">Uncommon</label>
+                    </div>
+                    <div class="rarity-option">
+                        <input type="radio" id="rare" name="plushRarity" value="rare">
+                        <label for="rare" class="rarity-label rare">Rare</label>
+                    </div>
+                    <div class="rarity-option">
+                        <input type="radio" id="ultraRare" name="plushRarity" value="ultraRare">
+                        <label for="ultraRare" class="rarity-label ultraRare">Ultra Rare</label>
+                    </div>
+                    <div class="rarity-option">
+                        <input type="radio" id="legendary" name="plushRarity" value="legendary">
+                        <label for="legendary" class="rarity-label legendary">Legendary</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-box required">
+                <label for="plushImage">PLUSH IMAGE *</label>
+                <input type="file" id="plushImage" name="plushImage" accept=".svg,.png" required>
+                <span class="underline"></span>
+                <p class="input-helper">Upload an SVG or PNG image of your plush (max size: 2MB)</p>
+            </div>
+
+            <div class="input-box">
+                <label for="message">DESCRIPTION</label>
+                <textarea id="message" name="message" placeholder="Tell us about your plush idea!"></textarea>
+                <span class="underline"></span>
+            </div>
+
+            <div class="preview-section hidden" id="previewSection">
+                <h3>Preview Your Plush</h3>
+                <div class="preview-container">
+                    <div class="preview-item">
+                        <div class="plush-preview" id="plushPreview">
+                            <div class="preview-placeholder">Preview will appear here</div>
+                        </div>
+                        <div class="preview-details">
+                            <p><strong>Name:</strong> <span id="previewName"></span></p>
+                            <p><strong>Rarity:</strong> <span id="previewRarity"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" id="previewButton" class="secondary-button">Preview</button>
+                <button type="submit" id="submit">Submit A Plush</button>
+            </div>
+        </form>
+
+        <!--Form submission text-->
+        <div id="successMessage" class="success-message hidden">
+            <h2>Thank You! 🎉</h2>
+            <p>Your plush idea has been submitted successfully!</p>
+            <p>Your plush will now appear in the Snag Frenzy game!</p>
+            <div class="success-buttons">
+                <a href="snag-frenzy.html" class="success-button">Play Snag Frenzy</a>
+                <button id="submitAnother" class="success-button secondary">Submit Another</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
